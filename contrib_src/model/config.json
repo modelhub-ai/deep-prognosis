@@ -1,0 +1,52 @@
+{
+  "id": "GET A UID FOR YOUR MODEL e.g. here https://www.uuidgenerator.net/",
+  "meta": {
+    "name": "",
+    "application_area": "",
+    "task": "",
+    "task_extended": "",
+    "data_type": "",
+    "data_source": ""
+  },
+  "publication": {
+    "title": "",
+    "source": "",
+    "year": 1800,
+    "authors": "",
+    "email": "",
+    "abstract": "",
+    "url": "",
+    "google_scholar": "",
+    "bibtex": ""
+  },
+  "viewer": "netron",
+  "model": {
+    "description": "",
+    "architecture": "",
+    "learning_type": "",
+    "io": {
+      "input": {
+        "format": [],
+        "dim_limits": [
+          {
+            "min": 0,
+            "max": 0
+          },
+          {
+            "min": 0
+          },
+          {
+            "min": 0
+          }
+        ]
+      },
+      "output": [
+        {
+          "name": "",
+          "type": ""
+        }
+      ]
+    }
+  },
+  "allow_user_input": true
+}

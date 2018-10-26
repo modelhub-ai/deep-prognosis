@@ -1,0 +1,4 @@
+# Put the license for your model here.
+# Model refers to the code required to run your model in modelhub
+# (preprocessing, postprocessing, inference, etc.) as well as the
+# architecture and weights

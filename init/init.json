@@ -1,0 +1,13 @@
+{
+  "docker_id": "YOUR MODEL'S DOCKER ON DOCKERHUB (e.g. modelhub/main_caffe2:0.2.0)",
+  "external_contrib_files": [
+    {
+      "src_url": "e.g. link to model weights",
+      "dest_file_path": "e.g. contrib_src/model/model.weights"
+    },
+    {
+      "src_url": "IF YOU DON'T NEED EXTERNAL FILES, DEFINE external_contrib_files AS AN EMPTY ARRAY",
+      "dest_file_path": "..."
+    }
+  ]
+}

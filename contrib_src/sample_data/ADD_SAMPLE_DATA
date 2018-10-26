@@ -1,0 +1,2 @@
+put your sample data files here and delete this placeholder file
+NOTE: If your sample data is large, it would be better to not upload it on github but to store them somewhere else and use the init.json to sepcify the source and destination. This way they will be automatically downloaded when somone starts a model via modelhub but won't take space in the git history.
