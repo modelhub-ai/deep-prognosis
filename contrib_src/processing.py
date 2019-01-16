@@ -7,25 +7,34 @@ import json
 
 class ImageProcessor(ImageProcessorBase):
 
-    # OPTIONAL: Use this method to preprocess images using the image objects
-    #           they've been loaded into automatically.
-    #           You can skip this and just perform the preprocessing after
-    #           the input image has been convertet to a numpy array (see below).
     def _preprocessBeforeConversionToNumpy(self, image):
-        if isinstance(image, PIL.Image.Image):
-            # TODO: implement preprocessing of PIL image objects
-        elif isinstance(image, SimpleITK.Image):
-            # TODO: implement preprocessing of SimpleITK image objects
+        if isinstance(image, np.ndarray):
+            image = image[50:100, 50:100, 50:100]
+            image = self._centerAndNormalize(image)
         else:
             raise IOError("Image Type not supported for preprocessing.")
         return image
 
-
     def _preprocessAfterConversionToNumpy(self, npArr):
-        # TODO: implement preprocessing of image after it was converted to a numpy array
+        # Since input is already a numpy array - there is nothing to do here.
         return npArr
 
-
     def computeOutput(self, inferenceResults):
-        # TODO: implement postprocessing of inference results
-        return result
+        probs = np.squeeze(np.asarray(inferenceResults[0]))
+        with open("model/labels.json") as jsonFile:
+            labels = json.load(jsonFile)
+        probLabel = []
+        for i in range (len(probs)):
+            obj = {'label': str(labels[str(i)]),
+                    'probability': float(probs[i])}
+            probLabel.append(obj)
+        return [probLabel, inferenceResults[1].tolist()]
+
+    def _centerAndNormalize(self, arr):
+        out = arr
+        oldMin = -1024
+        oldRange = 3071+1024
+        newRange = 1
+        newMin = 0
+        output = ((( out  - oldMin) * newRange * 1.0) / oldRange) + newMin
+        return output
