@@ -1,0 +1,40 @@
+# Use your environment image as base image
+FROM modelhub/keras:1.0.1
+
+RUN apt-get update && apt-get install -y libmagic1
+
+# Install requirements
+RUN pip install Flask==0.12.2 \
+    flask-cors==3.0.6 \
+    Redis==2.10.6 \
+    Pillow==5.1.0 \
+    SimpleITK==1.1.0 \
+    jupyter==1.0.0 \
+    netron==2.8.2 \
+    requests==2.20.0 \
+    python-magic==0.4.15 \
+    h5py==2.8.0
+
+# Make port 80 available to the world outside this container
+EXPOSE 80 81 8888
+
+# Define environment variable
+ENV PYTHONPATH /usr/local:/framework/:/contrib_src/:$PYTHONPATH
+
+# Set the working directory to /framework
+WORKDIR /framework
+
+# Copy the framework directory contents into the container at /framework
+ADD /framework /framework
+
+# Create dir where working files go (e.g. from the webservice)
+WORKDIR /working
+
+# Create dir where output files go (e.g. from the webservice)
+WORKDIR /output
+
+# Switch to the dir that holds the usr sources
+WORKDIR /contrib_src
+
+# Run /data/run.py when the container launches
+CMD ["python", "run.py"]
