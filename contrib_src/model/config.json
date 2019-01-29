@@ -24,6 +24,7 @@
     "architecture": "Convolutional neural network with fully connected layers.",
     "learning_type": "Supervised learning",
     "backend": ["tensorflow", "keras"],
+    "format": ".h5",
     "io": {
       "input": {
         "format": ["application/octet-stream"],
@@ -41,7 +42,7 @@
             "max": 150
           }
         ],
-        "description" : "numpy array (.npy) of the given dimensions centered around the tumor center of mass."
+        "description": "numpy array (.npy) of the given dimensions centered around the tumor center of mass."
       },
       "output": [
         {
