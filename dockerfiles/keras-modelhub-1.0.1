@@ -10,13 +10,12 @@ RUN pip install Flask==0.12.2 \
     Pillow==5.1.0 \
     SimpleITK==1.1.0 \
     jupyter==1.0.0 \
-    netron==2.8.2 \
     requests==2.20.0 \
     python-magic==0.4.15 \
     h5py==2.8.0
 
-# Make port 80 available to the world outside this container
-EXPOSE 80 81 8888
+# Make ports available to the world outside this container
+EXPOSE 80 8080
 
 # Define environment variable
 ENV PYTHONPATH /usr/local:/framework/:/contrib_src/:$PYTHONPATH
