@@ -18,12 +18,10 @@
     "google_scholar": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8976487770990178044",
     "bibtex": "@article{10.1371/journal.pmed.1002711, author = {Hosny, Ahmed AND Parmar, Chintan AND Coroller, Thibaud P. AND Grossmann, Patrick AND Zeleznik, Roman AND Kumar, Avnish AND Bussink, Johan AND Gillies, Robert J. AND Mak, Raymond H. AND Aerts, Hugo J. W. L.}, journal = {PLOS Medicine}, publisher = {Public Library of Science}, title = {Deep learning for lung cancer prognostication: A retrospective multi-cohort radiomics study}, year = {2018}, month = {11}, volume = {15}, url = {https://doi.org/10.1371/journal.pmed.1002711}, pages = {1-25}, abstract = {Hugo Aerts and colleagues evaluate the ability of deep learning networks to extract relevant features from computed tomography lung cancer images and stratify patients into low and high mortality risk groups.}, number = {11}, doi = {10.1371/journal.pmed.1002711}}"
   },
-  "viewer": "netron",
   "model": {
     "description": "This model predicts the survival likelihood of non-small cell lung cancer patients 2 years after the start of radiotherapy treatment.",
     "architecture": "Convolutional neural network with fully connected layers.",
     "learning_type": "Supervised learning",
-    "backend": ["tensorflow", "keras"],
     "format": ".h5",
     "io": {
       "input": {
