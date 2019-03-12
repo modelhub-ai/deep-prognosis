@@ -24,6 +24,7 @@ This repository hosts the contributor source files for the deep-prognosis model.
 | | |
 |-|-|
 | description | This model predicts the survival likelihood of non-small cell lung cancer patients 2 years after the start of radiotherapy treatment. | 
+| provenance | contributed by author |
 | architecture | Convolutional neural network with fully connected layers. | 
 | learning_type | Supervised learning | 
 | format | .h5 | 
